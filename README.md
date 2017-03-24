@@ -2,8 +2,6 @@
 
 > Task manager based on Google Task API
 
-> TODO github.io url
-
 ## Project installation
 
 ```
