@@ -2,6 +2,8 @@
 
 > Task manager based on Google Task API
 
+<img src="http://i.imgur.com/fyHZ3b0.png" height="200" />
+
 ## Project installation
 
 ```
