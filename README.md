@@ -10,6 +10,7 @@
 git clone git@github.com:dpellier/waes-list.git
 cd waes-list
 npm install
+npm start
 ```
 
 ## Useable tasks
