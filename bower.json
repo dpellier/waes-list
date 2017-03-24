@@ -1,0 +1,30 @@
+{
+  "name": "waes-list",
+  "description": "Task manager based on Google Task API",
+  "main": "src/index.html",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Damien Pellier",
+      "email": "dpellier@gmail.com",
+      "url": "https://github.com/dpellier"
+    }
+  ],
+  "homepage": "https://github.com/dpellier/waes-list",
+  "moduleType": [
+    "es6"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-ui-router": "~0.2.15",
+    "babel-polyfill": "^0.0.1",
+    "normalize-css": "normalize.css#~3.0.3"
+  },
+  "overrides": {},
+  "devDependencies": {
+    "angular-mocks": "~1.5.0"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
+  }
+}

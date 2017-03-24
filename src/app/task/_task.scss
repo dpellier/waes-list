@@ -1,0 +1,124 @@
+
+@import '../common/styles/colors';
+@import '../common/styles/icons';
+@import '../common/styles/mixins';
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px $white;
+    border-left: solid 5px;
+    height: 32px;
+
+    &--completed &__check {
+        color: $dusty-gray;
+    }
+
+    &--completed &__name {
+        text-decoration: line-through;
+        color: $dusty-gray;
+    }
+
+    &__check {
+        margin-left: 10px;
+        width: 16px;
+
+        &__checkbox {
+            $checkbox-size: 16px;
+
+            display: none;
+
+            & + label {
+                position: relative;
+                cursor: pointer;
+
+                &:before {
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    transition: linear .2s;
+                    margin: auto 0;
+                    border: solid 1px $shark;
+                    border-radius: 3px;
+                    width: $checkbox-size;
+                    height: $checkbox-size;
+                    vertical-align: middle;
+                    content: '';
+                    transition-property: border-color;
+                }
+
+                &:after {
+                    @include icon('check', true);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 2px;
+                    transition: opacity linear .2s;
+                    opacity: 0;
+                    margin: auto 0;
+                    width: $checkbox-size;
+                    height: $checkbox-size;
+                    vertical-align: middle;
+                    color: $forest-green;
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+            }
+
+            &:checked {
+                & + label {
+                    &:before {
+                        border-color: $dusty-gray;
+                    }
+
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__name {
+        @extend %ellipsis;
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    &__edition {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+
+        &__input {
+            flex: 1;
+            margin: 0 5px 0 10px;
+            border: solid 1px $dusty-gray;
+            color: $black;
+        }
+
+        &__actions {
+            color: $charade;
+
+            &__save,
+            &__reset {
+                cursor: pointer;
+                padding: 5px;
+            }
+
+            &__reset {
+                display: inline-block;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.task-child {
+    padding-left: 10px;
+}

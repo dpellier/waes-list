@@ -1,0 +1,23 @@
+
+<div class="menu-select">
+    <div class="menu-select__select"
+         ng-class="{'menu-select__select--open': controller._menuOpen}"
+         ng-click="controller._menuOpen = !controller._menuOpen">
+        <em class="icon-{{::icon}} menu-select__select__icon"></em>
+    </div>
+
+    <ul class="menu-select__list"
+        ng-show="controller._menuOpen">
+        <li class="menu-select__list__item"
+            ng-repeat="item in ::items track by $index"
+            ng-click="controller.clickAction(item.action)">
+            <em class="icon-{{::item.icon}} menu-select__list__item__icon"
+                ng-if="::item.icon">
+            </em>
+
+            <span class="menu-select__list__item__title">
+                {{::item.title}}
+            </span>
+        </li>
+    </ul>
+</div>

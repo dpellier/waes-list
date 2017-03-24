@@ -1,0 +1,55 @@
+<div>
+    <div class="task"
+         ng-style="::{'border-left-color': controller._color}"
+         ng-class="{'task--completed': controller.model.status === controller.status.completed}">
+        <div class="task__check">
+            <input class="task__check__checkbox"
+                   type="checkbox"
+                   ng-model="controller.model.status"
+                   ng-true-value="'{{::controller.status.completed}}'"
+                   ng-false-value="'{{::controller.status.todo}}'"
+                   ng-change="controller.changeStatus()"
+                   id="task_{{::controller.model.id}}" />
+
+            <label for="task_{{::controller.model.id}}"></label>
+        </div>
+
+        <div class="task__name"
+             ng-click="controller._edition = true"
+             ng-if="!controller._edition">
+            <span>
+                {{::controller.model.title}}
+            </span>
+        </div>
+
+        <div class="task__edition"
+             ng-if="controller._edition">
+            <input class="task__edition__input"
+                   type="text"
+                   ng-model="controller.model.title" />
+
+            <div class="task__edition__actions">
+                <em class="icon-check task__edition__actions__save"
+                    ng-click="controller.editName()">
+                </em>
+
+                <em class="icon-plus task__edition__actions__reset"
+                    ng-click="controller._edition = false"></em>
+            </div>
+        </div>
+
+        <menu-select class="task__menu"
+                     ng-show="!controller._edition"
+                     icon="plus"
+                     items="controller.menuActions">
+        </menu-select>
+    </div>
+
+    <div class="task-child"
+         ng-repeat="child in controller.model.children">
+        <task model="child"
+              index="$index"
+              task-list-id="{{::controller.taskListId}}">
+        </task>
+    </div>
+</div>

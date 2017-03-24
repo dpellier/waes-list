@@ -1,0 +1,82 @@
+{
+  "name": "waes-list",
+  "version": "0.1.0",
+  "description": "Task manager based on Google Task API",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Damien Pellier",
+      "email": "dpellier@gmail.com",
+      "url": "https://github.com/dpellier"
+    }
+  ],
+  "homepage": "https://github.com/dpellier/waes-list",
+  "bugs": "https://github.com/dpellier/waes-list/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dpellier/waes-list.git"
+  },
+  "main": "src/index.html",
+  "scripts": {
+    "build": "gulp build",
+    "postinstall": "bower install",
+    "start": "gulp serve:dist",
+    "test": "gulp test:unit",
+    "validate": "gulp lint && gulp test:unit"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-plugin-transform-object-assign": "^6.5.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "bower": "^1.7.0",
+    "browserify": "^12.0.1",
+    "browserify-istanbul": "^0.2.1",
+    "bulkify": "^1.1.1",
+    "connect-history-api-fallback": "^1.1.0",
+    "del": "^2.1.0",
+    "fs-finder": "^1.8.1",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-cssnano": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-help": "^1.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-ng-constant": "^1.1.0",
+    "gulp-protractor": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^6.0.1",
+    "gulp-sass": "^2.1.0",
+    "gulp-sass-lint": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-usemin": "^0.3.16",
+    "imagemin-pngquant": "^4.2.0",
+    "isparta": "^4.0.0",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-browserify": "^4.4.2",
+    "karma-coverage": "^0.4.2",
+    "karma-es6-shim": "^0.2.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "node-sass-import-once": "^1.2.0",
+    "phantomjs-prebuilt": "^2.1.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1",
+    "wiredep": "^2.2.2"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.3.12"
+  }
+}

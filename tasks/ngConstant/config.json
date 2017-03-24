@@ -1,0 +1,11 @@
+{
+    "development": {
+        "apiUrl": "http://localhost:8000"
+    },
+    "staging": {
+        "apiUrl": "http://localhost:8000"
+    },
+    "production": {
+        "apiUrl": "http://localhost:8000"
+    }
+}

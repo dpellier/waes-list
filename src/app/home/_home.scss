@@ -1,0 +1,48 @@
+
+@import '../common/styles/colors';
+@import '../common/styles/sizes';
+
+.home {
+    &__list {
+        @media screen and (min-width: $screen-tablet) {
+            margin: 0 80px;
+        }
+
+        @media screen and (min-width: $screen-desktop) {
+            margin: 0 120px;
+        }
+
+        @media screen and (min-width: $screen-large-desktop) {
+            margin: 0 150px;
+        }
+
+        &__add,
+        &__new {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            color: $dusty-gray;
+            box-sizing: border-box;
+        }
+
+        &__new {
+            &__input {
+                flex: 1;
+                margin: 0 5px 0 10px;
+                border: solid 1px $dusty-gray;
+                color: $black;
+            }
+
+            &__actions {
+                color: $charade;
+
+                &__save,
+                &__reset {
+                    cursor: pointer;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}

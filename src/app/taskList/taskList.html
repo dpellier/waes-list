@@ -1,0 +1,50 @@
+<div class="task-list">
+    <div class="task-list__header"
+         ng-click="controller.toggle()">
+        <span class="task-list__header__name">
+            {{controller.model.title}}
+        </span>
+
+        <div class="task-list__header__loader"
+             ng-if="controller._loading">
+        </div>
+
+        <menu-select class="task-list__header__menu"
+                     icon="plus"
+                     items="controller.menuActions">
+        </menu-select>
+    </div>
+
+    <div ng-show="!controller._loading && controller._open">
+        <div ng-repeat="task in controller.tasks">
+            <task model="task"
+                  index="$index"
+                  task-list-id="{{::controller.model.id}}">
+            </task>
+        </div>
+
+        <div class="task-list__add-task"
+             ng-show="!controller.newTask"
+             ng-click="controller.initNewTask()">
+            <span>
+                Add a new task
+            </span>
+        </div>
+
+        <div class="task-list__new-task"
+             ng-show="controller.newTask">
+            <input class="task-list__new-task__input"
+                   type="text"
+                   ng-model="controller.newTask.title" />
+
+            <div class="task-list__new-task__actions">
+                <em class="icon-check task-list__new-task__actions__save"
+                    ng-click="controller.saveNewTask()">
+                </em>
+
+                <em class="icon-trash task-list__new-task__actions__reset"
+                    ng-click="controller.resetNewTask()"></em>
+            </div>
+        </div>
+    </div>
+</div>

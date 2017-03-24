@@ -1,0 +1,35 @@
+<div class="home">
+    <header></header>
+
+    <div class="home__list">
+        <div ng-repeat="taskList in controller.taskLists">
+            <task-list model="taskList"
+                       on-remove="controller.remove({taskListId: taskList.id, index: $index})">
+            </task-list>
+        </div>
+
+        <div class="home__list__add"
+             ng-show="!controller.newList"
+             ng-click="controller.initNewList()">
+            <span>
+                Create a new list
+            </span>
+        </div>
+
+        <div class="home__list__"
+             ng-show="controller.newList">
+            <input class="home__list__new__input"
+                   type="text"
+                   ng-model="controller.newList.title" />
+
+            <div class="home__list__new__actions">
+                <em class="icon-check home__list__new__actions__save"
+                    ng-click="controller.saveNewList()">
+                </em>
+
+                <em class="icon-trash home__list__new__actions__reset"
+                    ng-click="controller.resetNewList()"></em>
+            </div>
+        </div>
+    </div>
+</div>
